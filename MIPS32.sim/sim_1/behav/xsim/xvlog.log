@@ -1,10 +1,24 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/EX_MEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX_MEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Fetch_Decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Fetch_Decode
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ID_EX.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ID_EX
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Decode.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Instr_Decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Execute.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Instr_Execute
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Fetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Instr_Fetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/PC_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ROM
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Regiters.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Regiters
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sim_1/new/TestBench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module test_bench
+INFO: [VRFC 10-311] analyzing module TestBench

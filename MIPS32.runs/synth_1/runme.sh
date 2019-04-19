@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Instr_Decode.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Instr_Decode.tcl
+EAStep vivado -log Instr_Execute.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Instr_Execute.tcl

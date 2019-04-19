@@ -28,8 +28,10 @@ module Instr_Fetch(
     );
     wire `AddrBus pc;
     wire ce;
+    wire `InstrBus ROM_FD_Instr;
     
     PC_reg PC_reg0(clk, reset, pc, ce);
-    ROM ROM0(pc ,ce, Instr);
+    ROM ROM0(pc ,ce, ROM_FD_Instr);
+    Fetch_Decode Fetch_Decode0(clk, ROM_FD_Instr, Instr);
     
 endmodule

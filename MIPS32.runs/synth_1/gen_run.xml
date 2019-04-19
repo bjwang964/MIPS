@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a50tcpg236-3" LaunchTime="1555516073">
-  <File Type="PA-TCL" Name="Instr_Decode.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Instr_Decode_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="Instr_Decode_reports.tcl"/>
-  <File Type="RDS-RDS" Name="Instr_Decode.vds"/>
-  <File Type="RDS-UTIL" Name="Instr_Decode_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Instr_Decode_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="Instr_Decode.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Instr_Decode_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Instr_Decode_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a50tcpg236-3" LaunchTime="1555665669">
+  <File Type="PA-TCL" Name="Instr_Execute.tcl"/>
+  <File Type="REPORTS-TCL" Name="Instr_Execute_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Instr_Execute.vds"/>
+  <File Type="RDS-UTIL" Name="Instr_Execute_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Instr_Execute_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Instr_Execute.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Define.v">
@@ -18,8 +15,30 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/EX.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/EX_MEM.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Instr_Execute.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/Decoder.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -27,6 +46,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/ID_EX.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -34,6 +54,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/Regiters.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -41,6 +62,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/Instr_Decode.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -70,22 +92,21 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/EX.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Instr_Decode"/>
+      <Option Name="TopModule" Val="Instr_Execute"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/Instr_Execute.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/Instr_Execute.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

@@ -30,11 +30,19 @@ module EX(
     input write_reg_ce,
     input `RegBus write_reg_addr,
     
-    output write_ce,
+    output reg write_ce,
     output reg `RegBus write_addr,
     output reg `DataBus write_data
     );
-    assign write_ce = write_reg_ce;
+    always @ write_reg_ce
+   	begin
+   		write_ce = write_reg_ce;
+   	end
+   	
+   	always @ write_reg_addr
+   	begin
+   		write_addr = write_reg_addr;
+   	end
     reg `DataBus re_log;
     always @ *
     begin
