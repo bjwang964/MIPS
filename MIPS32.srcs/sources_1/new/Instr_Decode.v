@@ -60,7 +60,7 @@ module Instr_Decode(
     Regiters Regiters0(i_reset,
                        read_reg_ce1, read_reg_addr1, read_reg_data1,
                        read_reg_ce2, read_reg_addr2, read_reg_data2,
-                       i_write_reg_ce, i_write_reg_data);
+                       i_write_reg_ce, i_write_reg_addr,i_write_reg_data);
     ID_EX ID_EX0(i_clk,
                  i_reset,
                  t_operand1,

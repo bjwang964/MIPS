@@ -30,30 +30,7 @@ module TestBench_Pipeline(
     begin
     	clk = 0;
     	reset = `ResetDisable;
-    	#10
-    	clk = ~clk;
-    	#10
-    	clk = ~clk;
-    	#10
-    	clk = ~clk;
-    	#10
-    	clk = ~clk;
-    	#10
-    	clk = ~clk;
-    	#10
-    	clk = ~clk;
-    	#10
-    	clk = ~clk;
-    	#10
-    	clk = ~clk;
-    	#10
-    	clk = ~clk;
-    	#10
-    	clk = ~clk;
-//    	#10
-//    	clk = ~clk;
-//    	#10
-//    	clk = ~clk;
+		forever #10 clk = ~clk;
     end
     
     Pipeline Pipeline0(clk, reset);
