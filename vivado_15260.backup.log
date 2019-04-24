@@ -2,10 +2,10 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Apr 24 15:19:19 2019
-# Process ID: 7848
+# Start of session at: Tue Apr 23 22:52:21 2019
+# Process ID: 15260
 # Current directory: C:/Users/q1109/Documents/VivadoProject/MIPS32
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10220 C:\Users\q1109\Documents\VivadoProject\MIPS32\MIPS32.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4616 C:\Users\q1109\Documents\VivadoProject\MIPS32\MIPS32.xpr
 # Log file: C:/Users/q1109/Documents/VivadoProject/MIPS32/vivado.log
 # Journal file: C:/Users/q1109/Documents/VivadoProject/MIPS32\vivado.jou
 #-----------------------------------------------------------
@@ -16,7 +16,7 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
-open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:29 . Memory (MB): peak = 806.125 ; gain = 126.617
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:41 . Memory (MB): peak = 776.777 ; gain = 129.043
 update_compile_order -fileset sources_1
 launch_simulation
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
@@ -65,266 +65,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProj
 INFO: [VRFC 10-311] analyzing module WB_Reg
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sim_1/new/TestBench_Pipeline.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module TestBench_Pipeline
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto f0810ab1def44928a26f705a9363a1a3 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot TestBench_Pipeline_behav xil_defaultlib.TestBench_Pipeline xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.PC_reg
-Compiling module xil_defaultlib.ROM
-Compiling module xil_defaultlib.Fetch_Decode
-Compiling module xil_defaultlib.Instr_Fetch
-Compiling module xil_defaultlib.Decoder
-Compiling module xil_defaultlib.Regiters
-Compiling module xil_defaultlib.ID_EX
-Compiling module xil_defaultlib.Instr_Decode
-Compiling module xil_defaultlib.EX
-Compiling module xil_defaultlib.EX_MEM
-Compiling module xil_defaultlib.Instr_Execute
-Compiling module xil_defaultlib.MEM
-Compiling module xil_defaultlib.MEM_WB
-Compiling module xil_defaultlib.Instr_Mem
-Compiling module xil_defaultlib.WB
-Compiling module xil_defaultlib.WB_Reg
-Compiling module xil_defaultlib.Instr_WB
-Compiling module xil_defaultlib.Pipeline
-Compiling module xil_defaultlib.TestBench_Pipeline
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot TestBench_Pipeline_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "TestBench_Pipeline_behav -key {Behavioral:sim_1:Functional:TestBench_Pipeline} -tclbatch {TestBench_Pipeline.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-source TestBench_Pipeline.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Stopped at time : 0 fs : File "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v" Line 37
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'TestBench_Pipeline_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 863.871 ; gain = 0.000
-run all
-run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 891.961 ; gain = 0.000
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:21 . Memory (MB): peak = 898.027 ; gain = 1.121
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'TestBench_Pipeline' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj TestBench_Pipeline_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Decoder
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/EX.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EX
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/EX_MEM.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EX_MEM
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Fetch_Decode.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Fetch_Decode
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ID_EX.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ID_EX
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Decode.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Instr_Decode
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Execute.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Instr_Execute
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Fetch.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Instr_Fetch
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Mem.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Instr_Mem
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_WB.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Instr_WB
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/MEM.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEM
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/MEM_WB.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEM_WB
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/PC_reg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module PC_reg
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Pipeline.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Pipeline
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ROM
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Regiters.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Regiters
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/WB.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WB
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/WB_Reg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WB_Reg
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sim_1/new/TestBench_Pipeline.v" into library xil_defaultlib
-WARNING: [VRFC 10-998] macro MemElem redefined [C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sim_1/new/TestDefine.v:13]
-INFO: [VRFC 10-311] analyzing module TestBench_Pipeline
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 898.027 ; gain = 0.000
-INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto f0810ab1def44928a26f705a9363a1a3 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot TestBench_Pipeline_behav xil_defaultlib.TestBench_Pipeline xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.PC_reg
-Compiling module xil_defaultlib.ROM
-Compiling module xil_defaultlib.Fetch_Decode
-Compiling module xil_defaultlib.Instr_Fetch
-Compiling module xil_defaultlib.Decoder
-Compiling module xil_defaultlib.Regiters
-Compiling module xil_defaultlib.ID_EX
-Compiling module xil_defaultlib.Instr_Decode
-Compiling module xil_defaultlib.EX
-Compiling module xil_defaultlib.EX_MEM
-Compiling module xil_defaultlib.Instr_Execute
-Compiling module xil_defaultlib.MEM
-Compiling module xil_defaultlib.MEM_WB
-Compiling module xil_defaultlib.Instr_Mem
-Compiling module xil_defaultlib.WB
-Compiling module xil_defaultlib.WB_Reg
-Compiling module xil_defaultlib.Instr_WB
-Compiling module xil_defaultlib.Pipeline
-Compiling module xil_defaultlib.TestBench_Pipeline
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot TestBench_Pipeline_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 898.027 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '14' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "TestBench_Pipeline_behav -key {Behavioral:sim_1:Functional:TestBench_Pipeline} -tclbatch {TestBench_Pipeline.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-source TestBench_Pipeline.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Stopped at time : 0 fs : File "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v" Line 37
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'TestBench_Pipeline_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:25 . Memory (MB): peak = 903.051 ; gain = 5.023
-run all
-run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 903.051 ; gain = 0.000
-remove_bps -file {C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v} -line 37
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-relaunch_sim
-suspend_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 923.926 ; gain = 0.000
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'TestBench_Pipeline' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj TestBench_Pipeline_vlog.prj"
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 923.926 ; gain = 0.000
-INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 923.926 ; gain = 0.000
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.2
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto f0810ab1def44928a26f705a9363a1a3 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot TestBench_Pipeline_behav xil_defaultlib.TestBench_Pipeline xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 923.926 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 923.926 ; gain = 0.000
-Vivado Simulator 2018.2
-Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:26 . Memory (MB): peak = 923.926 ; gain = 0.000
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-restart
-INFO: [Simtcl 6-17] Simulation restarted
-run all
-relaunch_sim
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'TestBench_Pipeline' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj TestBench_Pipeline_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Decoder
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/EX.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EX
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/EX_MEM.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module EX_MEM
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Fetch_Decode.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Fetch_Decode
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ID_EX.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ID_EX
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Decode.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Instr_Decode
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Execute.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Instr_Execute
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Fetch.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Instr_Fetch
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Mem.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Instr_Mem
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_WB.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Instr_WB
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/MEM.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEM
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/MEM_WB.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MEM_WB
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/PC_reg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module PC_reg
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Pipeline.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Pipeline
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ROM
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Regiters.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Regiters
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/WB.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WB
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/WB_Reg.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module WB_Reg
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sim_1/new/TestBench_Pipeline.v" into library xil_defaultlib
-WARNING: [VRFC 10-998] macro MemElem redefined [C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sim_1/new/TestDefine.v:13]
-INFO: [VRFC 10-311] analyzing module TestBench_Pipeline
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 947.977 ; gain = 0.000
-INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 947.977 ; gain = 0.000
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 812.070 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
 Vivado Simulator 2018.2
@@ -364,15 +106,158 @@ Built simulation snapshot TestBench_Pipeline_behav
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 source C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim/xsim.dir/TestBench_Pipeline_behav/webtalk/xsim_webtalk.tcl -notrace
-webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 55.508 ; gain = 1.371
-INFO: [Common 17-206] Exiting Webtalk at Thu Apr 25 00:06:57 2019...
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:23 . Memory (MB): peak = 947.977 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '23' seconds
-launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:23 . Memory (MB): peak = 947.977 ; gain = 0.000
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:18 . Memory (MB): peak = 55.590 ; gain = 1.223
+INFO: [Common 17-206] Exiting Webtalk at Tue Apr 23 22:58:14 2019...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:31 . Memory (MB): peak = 812.070 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '32' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TestBench_Pipeline_behav -key {Behavioral:sim_1:Functional:TestBench_Pipeline} -tclbatch {TestBench_Pipeline.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
 Vivado Simulator 2018.2
 Time resolution is 1 ps
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:32 . Memory (MB): peak = 947.977 ; gain = 0.000
+source TestBench_Pipeline.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+WARNING: File Instr_ROM.data referenced on C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v at line 37 cannot be opened for reading. Please ensure that this file is available in the current working directory.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TestBench_Pipeline_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:45 . Memory (MB): peak = 829.238 ; gain = 17.426
+add_bp {C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v} 37
+remove_bps -file {C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v} -line 37
+add_bp {C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v} 37
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+Stopped at time : 0 fs : File "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v" Line 37
+step
+WARNING: File Instr_ROM.data referenced on C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v at line 37 cannot be opened for reading. Please ensure that this file is available in the current working directory.
+Stopped at time : 0 fs : File "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Regiters.v" Line 46
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'TestBench_Pipeline' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj TestBench_Pipeline_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/EX_MEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EX_MEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Fetch_Decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Fetch_Decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ID_EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID_EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Instr_Decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Execute.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Instr_Execute
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Fetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Instr_Fetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_Mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Instr_Mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Instr_WB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Instr_WB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/MEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/MEM_WB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_WB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/PC_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Pipeline.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Pipeline
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/Regiters.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Regiters
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/WB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/WB_Reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WB_Reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sim_1/new/TestBench_Pipeline.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TestBench_Pipeline
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto f0810ab1def44928a26f705a9363a1a3 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot TestBench_Pipeline_behav xil_defaultlib.TestBench_Pipeline xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC_reg
+Compiling module xil_defaultlib.ROM
+Compiling module xil_defaultlib.Fetch_Decode
+Compiling module xil_defaultlib.Instr_Fetch
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.Regiters
+Compiling module xil_defaultlib.ID_EX
+Compiling module xil_defaultlib.Instr_Decode
+Compiling module xil_defaultlib.EX
+Compiling module xil_defaultlib.EX_MEM
+Compiling module xil_defaultlib.Instr_Execute
+Compiling module xil_defaultlib.MEM
+Compiling module xil_defaultlib.MEM_WB
+Compiling module xil_defaultlib.Instr_Mem
+Compiling module xil_defaultlib.WB
+Compiling module xil_defaultlib.WB_Reg
+Compiling module xil_defaultlib.Instr_WB
+Compiling module xil_defaultlib.Pipeline
+Compiling module xil_defaultlib.TestBench_Pipeline
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot TestBench_Pipeline_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+Stopped at time : 0 fs : File "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v" Line 37
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 866.297 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'TestBench_Pipeline' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj TestBench_Pipeline_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto f0810ab1def44928a26f705a9363a1a3 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot TestBench_Pipeline_behav xil_defaultlib.TestBench_Pipeline xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+Stopped at time : 0 fs : File "C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v" Line 37
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 866.297 ; gain = 0.000
+run all
+WARNING: File C:Usersq1109DocumentsVivadoProjectMIPS32MIPS32.srcssources_1
+ewInstr_ROM.data referenced on C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.srcs/sources_1/new/ROM.v at line 37 cannot be opened for reading. Please ensure that this file is available in the current working directory.
+run: Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 873.102 ; gain = 6.805
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Apr 25 00:08:14 2019...
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 23 23:10:55 2019...

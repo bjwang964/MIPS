@@ -10,7 +10,7 @@
 `define AddrBus             [15:0]
 `define DataBus             [31:0]
 `define InstrBus            [31:0]
-`define MemElem             [7:0]
+`define MemElem             [31:0]
 `define MemSize             [65535:0]
 `define NonInstr            32'h00000000
 `define RegAddrWide         [4:0]

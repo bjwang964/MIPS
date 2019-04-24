@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a50tcpg236-3" LaunchTime="1555853875">
   <File Type="PA-TCL" Name="Instr_Mem.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Instr_Mem_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Instr_Mem_reports.tcl"/>
   <File Type="RDS-RDS" Name="Instr_Mem.vds"/>
-  <File Type="RDS-UTIL" Name="Instr_Mem_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Instr_Mem_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="Instr_Mem.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Instr_Mem_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Instr_Mem_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Define.v">

@@ -42,7 +42,7 @@ module PC_reg(
         else
         begin
             CE = `ChipEnable;  
-            PC = PC + 4;
+            PC = PC + 1;
         end
     end
     
