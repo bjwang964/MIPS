@@ -9,3 +9,5 @@
 > Instr_ROM.om的二进制格式
 ## Instr_ROM.data
 > ROM指令初始化文件
+## ram.ld
+> 链接脚本
