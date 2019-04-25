@@ -1,0 +1,131 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 9248
+License: Customer
+
+Current time: 	Fri Apr 26 12:02:59 CST 2019
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 120
+Available screens: 1
+Available disk space: 154 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	q1109
+User home directory: C:/Users/q1109
+User working directory: C:/Users/q1109/Documents/VivadoProject/MIPS32
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.2
+RDI_DATADIR: C:/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/q1109/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/q1109/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/q1109/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/q1109/Documents/VivadoProject/MIPS32/vivado.log
+Vivado journal file location: 	C:/Users/q1109/Documents/VivadoProject/MIPS32/vivado.jou
+Engine tmp dir: 	C:/Users/q1109/Documents/VivadoProject/MIPS32/.Xil/Vivado-9248-LAPTOP-K1MHFSFN
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.2
+XILINX_SDK: C:/Xilinx/SDK/2018.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	151 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 500 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// [GUI Memory]: 54 MB (+53633kb) [00:00:12]
+// [Engine Memory]: 486 MB (+357673kb) [00:00:12]
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 57 MB (+861kb) [00:00:12]
+// bx (ck):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\q1109\Documents\VivadoProject\MIPS32\MIPS32.xpr. Version: Vivado v2018.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 506 MB. GUI used memory: 38 MB. Current time: 4/26/19 12:03:01 PM CST
+// [Engine Memory]: 511 MB (+1455kb) [00:00:17]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/q1109/Documents/VivadoProject/MIPS32/MIPS32.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// [Engine Memory]: 540 MB (+3102kb) [00:00:22]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 604 MB (+38576kb) [00:00:29]
+// HMemoryUtils.trashcanNow. Engine heap size: 637 MB. GUI used memory: 45 MB. Current time: 4/26/19 12:03:16 PM CST
+// Project name: MIPS32; location: C:/Users/q1109/Documents/VivadoProject/MIPS32; part: xc7a50tcpg236-3
+// [GUI Memory]: 60 MB (+342kb) [00:00:33]
+// [Engine Memory]: 664 MB (+31282kb) [00:00:33]
+// Tcl Message: open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:20 . Memory (MB): peak = 817.496 ; gain = 124.793 
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// [GUI Memory]: 64 MB (+1162kb) [00:00:35]
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (Pipeline.v) elapsed time: 0.2s
+// Elapsed time: 28 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Pipeline (Pipeline.v)]", 2, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Pipeline (Pipeline.v)]", 2, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+// [GUI Memory]: 68 MB (+721kb) [00:04:06]
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 208ms to process. Increasing delay to 2000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 2533 ms to process. Increasing delay to 2000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1450 ms. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 2668 ms. Increasing delay to 3000 ms.
+// [GUI Memory]: 72 MB (+183kb) [00:08:18]
+// [GUI Memory]: 77 MB (+1156kb) [00:12:04]
+// [GUI Memory]: 81 MB (+753kb) [00:16:24]
+// [GUI Memory]: 86 MB (+647kb) [00:25:02]
+// HMemoryUtils.trashcanNow. Engine heap size: 664 MB. GUI used memory: 43 MB. Current time: 4/26/19 12:33:18 PM CST
+// Elapsed time: 1869 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 692 seconds
+selectCodeEditor("Pipeline.v", 130, 105); // ce (w, ck)
+selectCodeEditor("Pipeline.v", 132, 186); // ce (w, ck)
+selectCodeEditor("Pipeline.v", 20, 190); // ce (w, ck)
+selectCodeEditor("Pipeline.v", 16, 133); // ce (w, ck)
+// [GUI Memory]: 92 MB (+1568kb) [00:44:40]
+// Elapsed time: 156 seconds
+selectCodeEditor("Pipeline.v", 180, 128); // ce (w, ck)
+selectCodeEditor("Pipeline.v", 155, 368); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 664 MB. GUI used memory: 41 MB. Current time: 4/26/19 1:03:19 PM CST
