@@ -37,6 +37,7 @@ module PC_reg(
     begin
         if(reset === `ResetEnable)
         begin
+        	PC = 0;
         end
         
         else

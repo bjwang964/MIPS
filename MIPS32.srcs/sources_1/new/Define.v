@@ -25,3 +25,6 @@
 `define Logic               3'b001
 `define Or                  8'b00100101
 `define RegBus              [4:0]
+`define Non32				32'bzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+`define Non5				5'bzzzzz
+`define Non16				16'bzzzzzzzzzzzzzzzz

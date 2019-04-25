@@ -27,11 +27,11 @@ module Regiters(
     
     input re1,
     input `RegAddrWide ReadReg1,
-    output  `DataBus ReadData1,
+    output reg `DataBus ReadData1,
     
     input re2,
     input `RegAddrWide ReadReg2,
-    output  `DataBus ReadData2,
+    output reg  `DataBus ReadData2,
     
     input we,
     input `RegAddrWide WriteReg,
@@ -47,29 +47,51 @@ module Regiters(
         Regsiter[5] = 32'h80000000;
     end
     
-    //¸´Î»
-    always @ reset
-    begin
-        if(reset == `ResetEnable)
-        begin
-            
-        end
-    end
-  
-    //¶Á¼Ä´æÆ÷1Âß¼­
-    assign ReadData1 = (re1==`ChipDisable)?`NonData:Regsiter[ReadReg1];
-    
-    //¶Á¼Ä´æÆ÷2Âß¼­
-    assign ReadData2 = (re2==`ChipDisable)?`NonData:Regsiter[ReadReg2];
-  
-    //Ð´¼Ä´æÆ÷Âß¼­ 
-    always @ WriteData
-    begin
-        if(we == `ChipEnable)
-        begin
-            Regsiter[WriteReg] = WriteData;
-        end
-    end
 
+  
+	always @ *
+	begin
+		//¶ÁÒ»
+		if(re1 == `ChipEnable)
+		begin
+			if(we == `ChipEnable && WriteReg == ReadReg1)
+			begin
+				ReadData1 = WriteData;
+			end
+			
+			else
+			begin
+				ReadData1 = Regsiter[ReadReg1];
+			end
+		end
+		
+		else
+		begin
+			ReadData1 = `Non32;
+		end
+		
+		//¶Á¶þ
+		if(re2 == `ChipEnable)
+		begin
+			if(we == `ChipEnable && WriteReg == ReadReg2)
+			begin
+				ReadData2 = WriteData;
+			end
+			
+			else
+			begin
+				ReadData2 = Regsiter[ReadReg2];
+			end
+		end
+		
+		else
+		begin
+			ReadData2 = `Non32;
+		end
+		
+		//Ð´
+		if(we == `ChipEnable)
+			Regsiter[WriteReg] = WriteData;
+	end
     
 endmodule

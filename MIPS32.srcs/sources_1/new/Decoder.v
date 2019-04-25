@@ -53,6 +53,16 @@ module Decoder(
         if(reset == `ResetEnable)
         begin
             //¸´Î»
+            read_reg_addr1 = `Non5;
+            read_reg_addr2 = `Non5;
+            write_reg_addr = `Non5;
+            read_reg_ce1 = `ChipDisable;
+            read_reg_ce2 = `ChipDisable;
+            write_reg_ce = `ChipDisable;
+            op_type = 3'bzzz;
+            sub_op_type = 8'bzzzzzzzz;
+            operand1 = `Non32;
+            operand2 = `Non32;
         end
         
         else
@@ -61,7 +71,7 @@ module Decoder(
                 `Ori:
                 begin
                     read_reg_addr1 = rs;
-                    read_reg_addr2 = 5'bz;
+                    read_reg_addr2 = `Non5;
                     write_reg_addr = rt;
                     read_reg_ce1 = `ChipEnable;
                     read_reg_ce2 = `ChipDisable;
@@ -73,16 +83,16 @@ module Decoder(
                 end
                 default:
                 begin;
-                    read_reg_addr1 = `NonData;
-                    read_reg_addr2 = `NonData;
-                    write_reg_addr = `NonData;
-                    read_reg_ce1 = `NonData;
-                    read_reg_ce2 = `NonData;
-                    write_reg_ce = `NonData;
-                    op_type = `NonData;
-                    sub_op_type = `NonData;
-                    operand1 = `NonData;
-                    operand2 = `NonData;
+           			read_reg_addr1 = `Non5;
+                	read_reg_addr2 = `Non5;
+                	write_reg_addr = `Non5;
+                	read_reg_ce1 = `ChipDisable;
+               		read_reg_ce2 = `ChipDisable;
+                	write_reg_ce = `ChipDisable;
+                	op_type = 3'bzzz;
+                	sub_op_type = 8'bzzzzzzzz;
+                	operand1 = `Non32;
+                	operand2 = `Non32;
                 end  
             endcase
         end

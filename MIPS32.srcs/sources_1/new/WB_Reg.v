@@ -33,7 +33,9 @@ output reg `DataBus o_write_reg_data
 
     );
     
-    always @ (posedge clk)
+//    always @ (posedge clk)
+
+	always @ *
     begin
     	o_write_reg_ce = i_write_reg_ce;
     	o_write_reg_addr = i_write_reg_addr;

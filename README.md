@@ -13,6 +13,25 @@
 >*3.[MIPS官方参考资料](https://www.mips.com/products/architectures/mips32-2/)*  
 ----
 ## **项目进度**
->* 已完成`OR`指令的取指，译码和执行三个部分的流水线模块，并完成测试。*（2019.4.19）*  
->* 已完成`OR`指令的前四级流水线设计，尚未完成测试。*（2019.4.20）*  
->* 已完成`OR`指令五级流水线设计，并完成测试。*（2019.4.21）  
+#### *(2019.4.19)*
+> 已完成`OR`指令的取指，译码和执行三个部分的流水线模块，并完成测试。 
+#### *(2019.4.20)*
+> 已完成`OR`指令的前四级流水线设计，尚未完成测试。  
+#### *(2019.4.21)*
+> 已完成`OR`指令五级流水线设计，并完成测试。  
+#### *(2019.4.25)*
+> 修改了原流水线结构，使其在第四个周期（访存）完成后可直接写寄存器，并解决了RAW（译码-回写）冲突。 
+----
+## **五级流水线时序图**
+#### 顶层时序
+>![顶层时序](https://github.com/bjwang964/MIPS/Picture/five-pipeline.png)
+#### 取指模块
+>![取指模块](https://github.com/bjwang964/MIPS/Picture/Instr_Fetch.PNG)
+#### 译码模块
+>![译码模块](https://github.com/bjwang964/MIPS/Picture/Instr_Decode.PNG)
+#### 执行模块
+>![执行模块](https://github.com/bjwang964/MIPS/Picture/Instr_Execute.PNG)
+#### 访存模块
+>![访存模块](https://github.com/bjwang964/MIPS/Picture/Instr_Mem.PNG)
+#### 写回模块
+>![写回模块](https://github.com/bjwang964/MIPS/Picture/Instr_WB.PNG)
