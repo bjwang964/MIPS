@@ -24,14 +24,14 @@
 ----
 ## **五级流水线时序图**
 #### 顶层时序
->![顶层时序](https://github.com/bjwang964/MIPS/Picture/five-pipeline.png)
+>![顶层时序](https://github.com/bjwang964/MIPS/blob/master/Picture/five-pipeline.png)
 #### 取指模块
->![取指模块](https://github.com/bjwang964/MIPS/Picture/Instr_Fetch.PNG)
+>![取指模块](https://github.com/bjwang964/MIPS/blob/master/Picture/Instr_Fetch.PNG)
 #### 译码模块
->![译码模块](https://github.com/bjwang964/MIPS/Picture/Instr_Decode.PNG)
+>![译码模块](https://github.com/bjwang964/MIPS/blob/master/Picture/Instr_Decode.PNG)
 #### 执行模块
->![执行模块](https://github.com/bjwang964/MIPS/Picture/Instr_Execute.PNG)
+>![执行模块](https://github.com/bjwang964/MIPS/blob/master/Picture/Instr_Execute.PNG)
 #### 访存模块
->![访存模块](https://github.com/bjwang964/MIPS/Picture/Instr_Mem.PNG)
+>![访存模块](https://github.com/bjwang964/MIPS/blob/master/Picture/Instr_Mem.PNG)
 #### 写回模块
->![写回模块](https://github.com/bjwang964/MIPS/Picture/Instr_WB.PNG)
+>![写回模块](https://github.com/bjwang964/MIPS/blob/master/Picture/Instr_WB.PNG)
