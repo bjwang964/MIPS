@@ -1,1 +1,11 @@
-# MIPS
+# 该分支创建MIPS指令集所需的各种编译文件
+## Instr_ROM.S
+> MIPS指令的汇编指令
+## Instr_ROM.o
+> Instr_ROM.S经过汇编后生成的ELF文件(重定位文件)
+## Instr_ROM.om
+> Instr_ROM.o经过链接生成的ELF文件(可执行文件)
+## Instr_ROM.bin
+> Instr_ROM.om的二进制格式
+## Instr_ROM.data
+> ROM指令初始化文件
