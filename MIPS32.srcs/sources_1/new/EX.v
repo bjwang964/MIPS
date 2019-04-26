@@ -29,16 +29,26 @@ module EX(
     input `DataBus operand2,
     input write_reg_ce,
     input `RegBus write_reg_addr,
+    input i_wb_ex,
     
     output reg write_ce,
     output reg `RegBus write_addr,
-    output reg `DataBus write_data
+    output reg `DataBus write_data,
+    
+    output o_wb_ec,
+    output `RegBus wb_addr,
+    output `DataBus wb_data
     );
+	assign wb_addr = write_addr;
+	assign wb_data = write_data;
+    assign o_wb_ec = i_wb_ex;
+    
+    
     always @ write_reg_ce
    	begin
    		write_ce = write_reg_ce;
    	end
-   	
+   		
    	always @ write_reg_addr
    	begin
    		write_addr = write_reg_addr;
@@ -54,7 +64,7 @@ module EX(
             
             default :
             begin
-                re_log = `NonData;
+                re_log = `Non32;
             end
         endcase
     end
@@ -69,7 +79,7 @@ module EX(
             
             default:
             begin
-                write_data = `NonData;
+                write_data = `Non32;
             end
         endcase
     end

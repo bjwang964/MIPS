@@ -34,7 +34,17 @@ module Instr_Decode(
     output  [2:0] o_op_type,
     output  [7:0] o_sub_op_type,
     output o_write_reg_ce,
-    output `RegBus o_write_reg_addr
+    output `RegBus o_write_reg_addr,
+    output o_wb_ex,
+    output o_wb_mem,
+    //执行阶段写数据
+    input i_wb_ex,
+    input `RegAddrWide EX_waddr,
+    input `DataBus EX_wdata,    
+    //访存阶段写数据
+    input i_wb_Mem,
+    input `RegAddrWide Mem_waddr,
+    input `DataBus Mem_wdata  
     );
     //Decoder与register公用信号
     wire read_reg_ce1;
@@ -51,16 +61,21 @@ module Instr_Decode(
     wire [7:0] t_sub_op_type;
     wire t_write_reg_ce;
     wire `RegBus t_write_reg_addr;
+    wire RI_o_wb_ex;
+    wire RI_o_wb_mem;
     
     Decoder Decoder0(i_reset,i_instr,
                      read_reg_data1, read_reg_data2,
                      read_reg_ce1, read_reg_ce2, t_write_reg_ce,
                      read_reg_addr1, read_reg_addr2, t_write_reg_addr,
-                     t_op_type, t_sub_op_type, t_operand1, t_operand2);
+                     t_op_type, t_sub_op_type, t_operand1, t_operand2,
+                     RI_o_wb_ex, RI_o_wb_mem);
     Regiters Regiters0(i_reset,
                        read_reg_ce1, read_reg_addr1, read_reg_data1,
                        read_reg_ce2, read_reg_addr2, read_reg_data2,
-                       i_write_reg_ce, i_write_reg_addr,i_write_reg_data);
+                       i_write_reg_ce, i_write_reg_addr,i_write_reg_data,
+                       i_wb_ex, EX_waddr, EX_wdata,
+                       i_wb_Mem, Mem_waddr, Mem_wdata);
     ID_EX ID_EX0(i_clk,
                  i_reset,
                  t_operand1,
@@ -69,12 +84,16 @@ module Instr_Decode(
                  t_sub_op_type,
                  t_write_reg_ce,
                  t_write_reg_addr,
+                 RI_o_wb_ex,
+                 RI_o_wb_mem,
                  
                  o_operand1,
                  o_operand2,
                  o_op_type,
                  o_sub_op_type,
                  o_write_reg_ce,
-                 o_write_reg_addr
+                 o_write_reg_addr,
+                 o_wb_ex,
+                 o_wb_mem
                     );
 endmodule

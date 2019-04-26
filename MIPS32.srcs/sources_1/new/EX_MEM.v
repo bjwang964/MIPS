@@ -28,10 +28,12 @@ module EX_MEM(
     input i_write_ce,
     input `RegBus i_write_addr,
     input `DataBus i_write_data,
+    input i_wb_mem,
     
     output reg o_write_ce,
     output reg `RegBus o_write_addr,
-    output reg `DataBus o_write_data
+    output reg `DataBus o_write_data,
+    output reg o_wb_mem
     );
 
     
@@ -40,6 +42,7 @@ module EX_MEM(
     	o_write_addr = i_write_addr;
     	o_write_data = i_write_data;
     	o_write_ce = i_write_ce;
+    	o_wb_mem = i_wb_mem;
     end
     
 endmodule

@@ -27,16 +27,22 @@ module Instr_Mem(
 	input i_write_reg_ce,
 	input `RegBus i_write_reg_addr,
 	input `DataBus i_write_reg_data,
+	input i_wb_mem,
+	
 	output o_write_reg_ce,
 	output `RegBus o_write_reg_addr,
-	output `DataBus o_write_reg_data
+	output `DataBus o_write_reg_data,
+	output  o_wb_mem,
+	output `RegBus o_wb_addr,
+	output `DataBus o_wb_data
     );
     wire write_reg_ce;
     wire `RegBus write_reg_addr;
     wire `DataBus write_reg_data;
     
-    MEM MEM0(reset, i_write_reg_ce,i_write_reg_addr, i_write_reg_data, 
-    			write_reg_ce, write_reg_addr,write_reg_data );
-    MEM_WB MEM_WB0(reset,clk,  write_reg_ce, write_reg_addr, write_reg_data,
+    MEM MEM0(reset, i_write_reg_ce,i_write_reg_addr, i_write_reg_data,i_wb_mem,
+    			write_reg_ce, write_reg_addr,write_reg_data, o_wb_mem, o_wb_addr, o_wb_data );
+    MEM_WB MEM_WB0(reset,clk,  
+    			   write_reg_ce, write_reg_addr, write_reg_data,
     				o_write_reg_ce, o_write_reg_addr, o_write_reg_data);
 endmodule

@@ -24,6 +24,8 @@
 #### *2019.4.25*
 >* 修改了原流水线结构，使其在第四个周期（访存）完成后可直接写寄存器  
 >* 解决了RAW（译码-回写）冲突。 
+#### *2019.4.26*
+> 增加了数据旁路，实现数据前推，解决一部分指令的RAW冲突。
 ----
 ## **五级流水线时序图**
 #### 顶层时序
@@ -32,8 +34,11 @@
 >![取指模块](https://github.com/bjwang964/MIPS/blob/master/Picture/Instr_Fetch.PNG)
 #### 译码模块
 >![译码模块](https://github.com/bjwang964/MIPS/blob/master/Picture/Instr_Decode.PNG)
+>>译码器：![译码器](https://github.com/bjwang964/MIPS/blob/master/Picture/Instr_Decode_Decoder.PNG)
+>>寄存器组：![寄存器组](https://github.com/bjwang964/MIPS/blob/master/Picture/Instr_Decode_Regsiters.PNG)
 #### 执行模块
 >![执行模块](https://github.com/bjwang964/MIPS/blob/master/Picture/Instr_Execute.PNG)
+>>运算器：![运算器](https://github.com/bjwang964/MIPS/blob/master/Picture/Instr_Execute_EX.PNG)
 #### 访存模块
 >![访存模块](https://github.com/bjwang964/MIPS/blob/master/Picture/Instr_Mem.PNG)
 #### 写回模块

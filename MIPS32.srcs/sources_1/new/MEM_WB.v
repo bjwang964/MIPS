@@ -27,6 +27,8 @@ module MEM_WB(
 	input i_write_reg_ce,
 	input `RegBus i_write_reg_addr,
 	input `DataBus i_write_reg_data,
+
+	
 	output reg o_write_reg_ce,
 	output reg `RegBus o_write_reg_addr,
 	output reg `DataBus o_write_reg_data

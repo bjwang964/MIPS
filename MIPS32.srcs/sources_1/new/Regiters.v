@@ -33,9 +33,18 @@ module Regiters(
     input `RegAddrWide ReadReg2,
     output reg  `DataBus ReadData2,
     
+    //写回阶段写数据
     input we,
     input `RegAddrWide WriteReg,
-    input `DataBus WriteData    
+    input `DataBus WriteData,
+    //执行阶段写数据
+    input wb_ex,
+    input `RegAddrWide EX_waddr,
+    input `DataBus EX_wdata,    
+    //访存阶段写数据
+    input wb_Mem,
+    input `RegAddrWide Mem_waddr,
+    input `DataBus Mem_wdata  
     );
   
    
@@ -44,7 +53,6 @@ module Regiters(
     initial
     begin
         Regsiter[0] = 32'h00000000;
-        Regsiter[5] = 32'h80000000;
     end
     
 
@@ -54,11 +62,22 @@ module Regiters(
 		//读一
 		if(re1 == `ChipEnable)
 		begin
+			//写回阶段数据前推
 			if(we == `ChipEnable && WriteReg == ReadReg1)
 			begin
 				ReadData1 = WriteData;
 			end
-			
+			//执行阶段数据前推
+			else if(wb_ex == `ChipEnable && ReadReg1 == EX_waddr)
+			begin
+				ReadData1 = EX_wdata;
+			end
+			//访存阶段数据前推
+			else if(wb_Mem == `ChipEnable && ReadReg1 == Mem_waddr)
+			begin
+				ReadData1 = Mem_wdata;
+			end			
+			//无冲突读数据
 			else
 			begin
 				ReadData1 = Regsiter[ReadReg1];
@@ -73,11 +92,22 @@ module Regiters(
 		//读二
 		if(re2 == `ChipEnable)
 		begin
+			//写回阶段数据前推
 			if(we == `ChipEnable && WriteReg == ReadReg2)
 			begin
 				ReadData2 = WriteData;
 			end
-			
+			//执行阶段数据前推
+			else if(wb_ex == `ChipEnable && ReadReg2 == EX_waddr)
+			begin
+				ReadData2 = EX_wdata;
+			end
+			//访存阶段数据前推
+			else if(wb_Mem == `ChipEnable && ReadReg2 == Mem_waddr)
+			begin
+				ReadData2 = Mem_wdata;
+			end			
+			//无冲突读数据
 			else
 			begin
 				ReadData2 = Regsiter[ReadReg2];

@@ -39,7 +39,12 @@ module Decoder(
     output reg [2:0] op_type,
     output reg [7:0] sub_op_type,
     output reg `DataBus operand1,
-    output reg `DataBus operand2
+    output reg `DataBus operand2,
+    
+    //数据前推使能
+    output reg wb_ex,
+    output reg wb_mem
+    
     );
     
     wire [5:0] op = instr[31:26];
@@ -63,6 +68,8 @@ module Decoder(
             sub_op_type = 8'bzzzzzzzz;
             operand1 = `Non32;
             operand2 = `Non32;
+            wb_ex = 1'bz;
+            wb_mem = 1'bz;
         end
         
         else
@@ -80,6 +87,8 @@ module Decoder(
                     sub_op_type = `Or;
                     operand1 = read_reg_data1;
                     operand2 = {16'h0, imm};
+                    wb_ex = `ChipEnable;
+                    wb_mem = `ChipEnable;
                 end
                 default:
                 begin;
@@ -93,6 +102,8 @@ module Decoder(
                 	sub_op_type = 8'bzzzzzzzz;
                 	operand1 = `Non32;
                 	operand2 = `Non32;
+                	wb_ex = 1'bz;
+                	wb_mem = 1'bz;
                 end  
             endcase
         end
