@@ -48,10 +48,21 @@ module Decoder(
     );
     
     wire [5:0] op = instr[31:26];
-    wire [4:0] rs = instr[25:21];
-    wire [4:0] rt = instr[20:16];
+
+    //I 类型
+    wire [4:0] i_rs = instr[25:21];
+    wire [4:0] i_rd = instr[20:16];
     wire [15:0] imm = instr[15:0];
     
+    //R 类型
+    wire [4:0] r_rs = instr[25:21];
+    wire [4:0] r_rt = instr[20:16];
+    wire [4:0] r_rd = instr[15:11];
+    wire [4:0] sa = instr[10:6];
+    wire [5:0] func = instr[5:0];
+    
+    //J 类型
+    wire [25:0] address = instr[25:0];
     
     always @ (*)
     begin
@@ -77,19 +88,231 @@ module Decoder(
             case (op)
                 `Ori:
                 begin
-                    read_reg_addr1 = rs;
+                    read_reg_addr1 = i_rs;
                     read_reg_addr2 = `Non5;
-                    write_reg_addr = rt;
+                    write_reg_addr = i_rd;
                     read_reg_ce1 = `ChipEnable;
                     read_reg_ce2 = `ChipDisable;
                     write_reg_ce = `ChipEnable;
                     op_type = `Logic;
-                    sub_op_type = `Or;
+                    sub_op_type = `or;
                     operand1 = read_reg_data1;
                     operand2 = {16'h0, imm};
                     wb_ex = `ChipEnable;
                     wb_mem = `ChipEnable;
                 end
+                
+                `Andi:
+                begin
+                    read_reg_addr1 = i_rs;
+               	 	read_reg_addr2 = `Non5;
+                	write_reg_addr = i_rd;
+                	read_reg_ce1 = `ChipEnable;
+                	read_reg_ce2 = `ChipDisable;
+                	write_reg_ce = `ChipEnable;
+                	op_type = `Logic;
+                	sub_op_type = `and;
+                	operand1 = read_reg_data1;
+                	operand2 = {16'h0, imm};
+                	wb_ex = `ChipEnable;
+                	wb_mem = `ChipEnable;
+                end
+                
+                `Xori:
+                begin
+                    read_reg_addr1 = i_rs;
+               	 	read_reg_addr2 = `Non5;
+                	write_reg_addr = i_rd;
+                	read_reg_ce1 = `ChipEnable;
+                	read_reg_ce2 = `ChipDisable;
+                	write_reg_ce = `ChipEnable;
+                	op_type = `Logic;
+                	sub_op_type = `xor;
+                	operand1 = read_reg_data1;
+                	operand2 = {16'h0, imm};
+                	wb_ex = `ChipEnable;
+                	wb_mem = `ChipEnable;
+                end
+                
+                `Lui:
+                begin
+                    read_reg_addr1 = i_rs;
+               	 	read_reg_addr2 = `Non5;
+                	write_reg_addr = i_rd;
+                	read_reg_ce1 = `ChipEnable;
+                	read_reg_ce2 = `ChipDisable;
+                	write_reg_ce = `ChipEnable;
+                	op_type = `Logic;
+                	sub_op_type = `or;
+                	operand1 = read_reg_data1;
+                	operand2 = {imm,16'h0};
+                	wb_ex = `ChipEnable;
+                	wb_mem = `ChipEnable;
+                end
+                
+                `Special:
+                begin
+                	if(sa == 0 && func == `And)
+                	begin
+                    	read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Logic;
+                		sub_op_type = `and;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                	end
+                	
+                	if(sa == 0 && func == `Or)
+                	begin
+                    	read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Logic;
+                		sub_op_type = `or;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                	end            
+                	
+                	if(sa == 0 && func == `Xor)
+                	begin
+                    	read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Logic;
+                		sub_op_type = `xor;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                	end           
+                	
+                	if(sa == 0 && func == `Nor)
+                	begin
+                    	read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Logic;
+                		sub_op_type = `nor;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                	end                  	    	
+                	
+                	if(r_rs == 0 && func == `Sll)
+                	begin
+                    	read_reg_addr1 = `Non5;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipDisable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Shift;
+                		sub_op_type = `sll;
+                		operand1 = {27'h0, sa};
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                	end  
+                	
+                	if(r_rs == 0 && func == `Srl)
+                	begin
+                    	read_reg_addr1 = `Non5;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipDisable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Shift;
+                		sub_op_type = `srl;
+                		operand1 = {27'h0, sa};
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                	end  
+                	
+                	if(r_rs == 0 && func == `Sra)
+                	begin
+                    	read_reg_addr1 = `Non5;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipDisable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Shift;
+                		sub_op_type = `sra;
+                		operand1 = {27'h0, sa};
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                	end  
+                	
+                	if(sa == 0 && func == `Sllv)
+                	begin
+                    	read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Shift;
+                		sub_op_type = `sllv;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                	end  
+                	
+                	if(sa == 0 && func == `Srlv)
+                	begin
+                    	read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Shift;
+                		sub_op_type = `srlv;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                	end  
+                	
+                	if(sa == 0 && func == `Srav)
+                	begin
+                    	read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Shift;
+                		sub_op_type = `srav;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                	end
+                end
+                
                 default:
                 begin;
            			read_reg_addr1 = `Non5;

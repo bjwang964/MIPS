@@ -54,19 +54,86 @@ module EX(
    		write_addr = write_reg_addr;
    	end
     reg `DataBus re_log;
+    reg `DataBus re_sft;
     always @ *
     begin
-        case (sub_op_type)
-            `Or:
-            begin
-                re_log = operand1 | operand2;
-            end
-            
-            default :
-            begin
+    	case(op_type)
+    		`Logic:
+    		begin
+        		case (sub_op_type)
+            		`or:
+            		begin
+                		re_log = operand1 | operand2;
+            		end
+            		
+            		`and:
+            		begin
+                		re_log = operand1 & operand2;
+            		end
+            		
+            		`xor:
+            		begin
+                		re_log = operand1 ^ operand2;
+            		end
+            		
+            		`nor:
+            		begin
+                		re_log = ~(operand1 | operand2);
+            		end
+            		
+            		default :
+            		begin
+                		re_log = `Non32;
+            		end
+				endcase
+			end
+			
+			`Shift:
+			begin
+				case(sub_op_type)
+				`sll:
+				begin
+					re_sft = operand2 << operand1;
+				end
+				
+				`srl:
+				begin
+					re_sft = operand2 >> operand1;
+				end
+				
+				`sra:
+				begin
+					re_sft = (operand2 >> operand1) | 32'h80000000 ;
+				end
+				
+				`sllv:
+				begin
+					re_sft = operand2 << operand1;
+				end
+				
+				`srlv:
+				begin
+					re_sft = operand2 >> operand1;
+				end
+				
+				`srav:
+				begin
+					re_sft = (operand2 >> operand1) | 32'h80000000 ;
+				end
+				
+				default :
+				begin
+                	re_sft = `Non32;
+				end
+				endcase
+			end
+			
+			default :
+			begin
+                re_sft = `Non32;
                 re_log = `Non32;
-            end
-        endcase
+			end
+		endcase
     end
     
     always @ *
@@ -75,6 +142,11 @@ module EX(
             `Logic:
             begin
                 write_data = re_log;
+            end
+            
+            `Shift:
+            begin
+            	write_data = re_sft;
             end
             
             default:
