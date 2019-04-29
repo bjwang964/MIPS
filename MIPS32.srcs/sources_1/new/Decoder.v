@@ -311,6 +311,46 @@ module Decoder(
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
                 	end
+                	
+                	if(sa == 0 && func == `Movn)
+                	begin
+                		read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		if(operand2 != 0)
+                			write_reg_ce = `ChipEnable;
+                		else
+                			write_reg_ce = `ChipDisable;
+                		op_type = `Move;
+                		sub_op_type = `movn;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                	end
+                	
+                	if(sa == 0 && func == `Movz)
+                	begin
+                		read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		if(operand2 == 0)
+                			write_reg_ce = `ChipEnable;
+                		else
+                			write_reg_ce = `ChipDisable;
+                		op_type = `Move;
+                		sub_op_type = `movz;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                	end
+                	
+                	
                 end
                 
                 default:

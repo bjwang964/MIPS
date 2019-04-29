@@ -55,6 +55,7 @@ module EX(
    	end
     reg `DataBus re_log;
     reg `DataBus re_sft;
+    reg `DataBus re_mov;
     always @ *
     begin
     	case(op_type)
@@ -128,10 +129,25 @@ module EX(
 				endcase
 			end
 			
+			`Move:
+			begin
+				case(sub_op_type)
+					`movz:
+					begin
+						re_mov = operand1;
+					end
+					`movn:
+					begin
+						re_mov = operand1;
+					end
+				endcase
+			end
+			
 			default :
 			begin
                 re_sft = `Non32;
                 re_log = `Non32;
+                re_mov = `Non32;
 			end
 		endcase
     end
@@ -147,6 +163,11 @@ module EX(
             `Shift:
             begin
             	write_data = re_sft;
+            end
+            
+            `Move:
+            begin
+            	write_data = re_mov;
             end
             
             default:
