@@ -31,13 +31,27 @@ module EX(
     input `RegBus write_reg_addr,
     input i_wb_ex,
     
+    input i_we_hi,
+    input i_we_lo,
+    input `DataBus i_hi_data,
+    input `DataBus i_lo_data,
+    input `DataBus mem_hi_data,
+    input `DataBus mem_lo_data,
+    input mem_wb_hi,
+    input mem_wb_lo,
+    
     output reg write_ce,
     output reg `RegBus write_addr,
     output reg `DataBus write_data,
     
     output o_wb_ec,
     output `RegBus wb_addr,
-    output `DataBus wb_data
+    output `DataBus wb_data,
+    
+    output reg o_we_hi,
+    output reg o_we_lo,
+    output reg `DataBus o_hi_data,
+    output reg `DataBus o_lo_data
     );
 	assign wb_addr = write_addr;
 	assign wb_data = write_data;
@@ -53,6 +67,17 @@ module EX(
    	begin
    		write_addr = write_reg_addr;
    	end
+   	
+   	always @ i_we_hi
+   	begin
+   		o_we_hi = i_we_hi;
+   	end
+   	
+   	always @ i_we_lo
+   	begin
+   		o_we_lo = i_we_lo;
+   	end
+   	
     reg `DataBus re_log;
     reg `DataBus re_sft;
     reg `DataBus re_mov;
@@ -139,6 +164,36 @@ module EX(
 					`movn:
 					begin
 						re_mov = operand1;
+					end
+					`mfhi:
+					begin
+						if(mem_wb_hi == `ChipEnable)
+						begin
+							re_mov = mem_hi_data;
+						end
+						else
+							re_mov = i_hi_data;
+						begin
+						end
+					end
+					`mthi:
+					begin
+						o_hi_data = operand1;
+					end
+					`mflo:
+					begin
+						if(mem_wb_lo == `ChipEnable)
+						begin
+							re_mov = mem_lo_data;
+						end
+						else
+						begin
+							re_mov = i_lo_data;
+						end
+					end
+					`mtlo:
+					begin
+						o_lo_data = operand1;
 					end
 				endcase
 			end

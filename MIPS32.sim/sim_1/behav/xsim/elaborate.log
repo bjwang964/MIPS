@@ -23,6 +23,7 @@ Compiling module xil_defaultlib.MEM_WB
 Compiling module xil_defaultlib.Instr_Mem
 Compiling module xil_defaultlib.WB
 Compiling module xil_defaultlib.WB_Reg
+Compiling module xil_defaultlib.HILO
 Compiling module xil_defaultlib.Instr_WB
 Compiling module xil_defaultlib.Pipeline
 Compiling module xil_defaultlib.TestBench_Pipeline

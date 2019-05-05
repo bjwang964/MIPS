@@ -64,6 +64,24 @@ module Pipeline(
     wire `RegBus MD_write_addr;
     wire `DataBus MD_write_data;
     
+    //ÌØÊâ¼Ä´æÆ÷
+    wire DE_we_hi;
+    wire DE_we_lo;
+    wire `DataBus WE_hi_data;
+    wire `DataBus WE_lo_data;
+    wire `DataBus ME_hi_data;
+    wire `DataBus ME_lo_data;
+    wire ME_wb_hi;
+    wire ME_wb_lo;
+    wire EM_wb_hi;
+    wire EM_wb_lo;
+    wire `DataBus EM_hi_data;
+    wire `DataBus EM_lo_data;
+    wire MW_wb_hi;
+    wire MW_wb_lo;
+    wire `DataBus MW_hi_data;
+    wire `DataBus MW_lo_data;
+    
     Instr_Fetch Instr_Fetch0
     (
     	clk,reset,
@@ -75,25 +93,31 @@ module Pipeline(
     	clk,reset,FD_Instr,WF_write_reg_ce,WF_write_reg_addr, WF_write_reg_data,
     	DE_operand1, DE_operand2, DE_op_type, DE_sub_op_type, DE_write_reg_ce, DE_write_reg_addr,DE_wb_ex, DE_wb_mem,
     	ED_wb_ex, ED_write_addr, ED_write_data,
-    	MD_wb_mem,MD_write_addr, MD_write_data
-    	
+    	MD_wb_mem,MD_write_addr, MD_write_data,
+    	DE_we_hi, DE_we_lo
     );
 
     Instr_Execute Instr_Execute0
     (
     	clk,reset,DE_op_type, DE_sub_op_type,DE_operand1, DE_operand2,DE_write_reg_ce, DE_write_reg_addr,DE_wb_ex, DE_wb_mem,
+    	DE_we_hi, DE_we_lo, WE_hi_data, WE_lo_data, ME_hi_data, ME_lo_data,ME_wb_hi, ME_wb_lo,
     	EM_write_ce, EM_write_addr,EM_write_data,
-    	ED_wb_ex, EM_wb_mem, ED_write_addr, ED_write_data
+    	ED_wb_ex, EM_wb_mem, ED_write_addr, ED_write_data,
+    	EM_wb_hi, EM_wb_lo, EM_hi_data, EM_lo_data
     );
     
     Instr_Mem Instr_Mem0
     (
     	reset,clk,EM_write_ce, EM_write_addr,EM_write_data,EM_wb_mem,
-    	MW_write_reg_ce,MW_write_reg_addr, MW_write_reg_data,MD_wb_mem,MD_write_addr, MD_write_data
+    	EM_wb_hi, EM_wb_lo, EM_hi_data, EM_lo_data,
+    	MW_write_reg_ce,MW_write_reg_addr, MW_write_reg_data,MD_wb_mem,MD_write_addr, MD_write_data,
+    	MW_wb_hi, MW_wb_lo, MW_hi_data, MW_lo_data, ME_hi_data, ME_lo_data,ME_wb_hi, ME_wb_lo
     );
     Instr_WB Instr_WB0
     (
     	reset,clk,MW_write_reg_ce, MW_write_reg_addr,MW_write_reg_data,
-    	WF_write_reg_ce,WF_write_reg_addr, WF_write_reg_data
+    	MW_wb_hi, MW_wb_lo, MW_hi_data, MW_lo_data,
+    	WF_write_reg_ce,WF_write_reg_addr, WF_write_reg_data,
+    	WE_hi_data, WE_lo_data
     );
 endmodule

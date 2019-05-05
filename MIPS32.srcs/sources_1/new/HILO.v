@@ -23,7 +23,8 @@
 
 module HILO(
 		input reset,
-		input we,
+		input we_hi,
+		input we_lo,
 		input `DataBus i_hi_data,
 		input `DataBus i_lo_data,
 		output reg `DataBus o_hi_data,
@@ -33,10 +34,13 @@ module HILO(
     reg `DataBus LO;
     always @ *
     begin
-    	if(we == `ChipEnable)
+    	if(we_hi == `ChipEnable)
     	begin
     		HI <= i_hi_data;
-    		LO <= o_lo_data;
+    	end
+    	if(we_lo == `ChipEnable)
+    	begin
+    		LO <= i_lo_data;
     	end
     	o_hi_data = HI;
     	o_lo_data = LO;

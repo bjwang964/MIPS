@@ -29,7 +29,7 @@
 `define MemSize             [65535:0]
 `define NumRegs             32
 
-//运算信号
+
 
 
 
@@ -54,6 +54,10 @@
 
 `define Movn				 6'b001011
 `define Movz				 6'b001010
+`define Mfhi				 6'b010000
+`define Mthi				 6'b010001
+`define Mflo				 6'b010010
+`define Mtlo				 6'b010011
 
 	//执行类型
 `define Logic               3'b001
@@ -62,6 +66,7 @@
 `define xor                 8'b00100110
 `define nor                 8'b00100111
 `define lu					 8'b01011100
+
 `define Shift				 3'b010
 `define sll  				 8'b01111100
 `define sllv  				 8'b00000100
@@ -69,8 +74,13 @@
 `define srlv 				 8'b00000110
 `define sra 				 8'b00000011
 `define srav 				 8'b00000111
+
 `define Move				 3'b011
 `define movn				 8'b00001011
 `define movz				 8'b00001010
+`define mfhi				 8'b00010000
+`define mthi				 8'b00010001
+`define mflo				 8'b00010010
+`define mtlo				 8'b00010011
 
 

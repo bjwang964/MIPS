@@ -33,6 +33,8 @@ module ID_EX(
         input `RegBus i_write_reg_addr,
     	input i_wb_ex,
         input i_wb_mem,
+        input i_we_hi,
+        input i_we_lo,
            
 
         output reg `DataBus o_operand1,
@@ -42,7 +44,9 @@ module ID_EX(
         output reg o_write_reg_ce,
         output reg `RegBus o_write_reg_addr,
     	output reg o_wb_ex,
-        output reg o_wb_mem
+        output reg o_wb_mem,
+        output reg o_we_hi,
+        output reg o_we_lo
     );
     
     always @ (posedge clk)
@@ -55,6 +59,8 @@ module ID_EX(
         o_write_reg_addr = i_write_reg_addr;
         o_wb_ex = i_wb_ex;
         o_wb_mem = i_wb_mem;
+        o_we_hi = i_we_hi;
+        o_we_lo = i_we_lo;
     end
     
     

@@ -41,6 +41,10 @@ module Decoder(
     output reg `DataBus operand1,
     output reg `DataBus operand2,
     
+    //特殊寄存器信号
+    output reg we_hi,
+    output reg we_ol,
+    
     //数据前推使能
     output reg wb_ex,
     output reg wb_mem
@@ -81,6 +85,8 @@ module Decoder(
             operand2 = `Non32;
             wb_ex = 1'bz;
             wb_mem = 1'bz;
+            we_hi = `ChipDisable;
+            we_ol = `ChipDisable;
         end
         
         else
@@ -100,6 +106,8 @@ module Decoder(
                     operand2 = {16'h0, imm};
                     wb_ex = `ChipEnable;
                     wb_mem = `ChipEnable;
+                    we_hi = `ChipDisable;
+                    we_ol = `ChipDisable;
                 end
                 
                 `Andi:
@@ -116,6 +124,8 @@ module Decoder(
                 	operand2 = {16'h0, imm};
                 	wb_ex = `ChipEnable;
                 	wb_mem = `ChipEnable;
+                	we_hi = `ChipDisable;
+                	we_ol = `ChipDisable;
                 end
                 
                 `Xori:
@@ -132,6 +142,8 @@ module Decoder(
                 	operand2 = {16'h0, imm};
                 	wb_ex = `ChipEnable;
                 	wb_mem = `ChipEnable;
+                	we_hi = `ChipDisable;
+                	we_ol = `ChipDisable;
                 end
                 
                 `Lui:
@@ -148,6 +160,8 @@ module Decoder(
                 	operand2 = {imm,16'h0};
                 	wb_ex = `ChipEnable;
                 	wb_mem = `ChipEnable;
+                	we_hi = `ChipDisable;
+                	we_ol = `ChipDisable;
                 end
                 
                 `Special:
@@ -166,6 +180,8 @@ module Decoder(
                 		operand2 = read_reg_data2;
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
                 	end
                 	
                 	if(sa == 0 && func == `Or)
@@ -182,6 +198,8 @@ module Decoder(
                 		operand2 = read_reg_data2;
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
                 	end            
                 	
                 	if(sa == 0 && func == `Xor)
@@ -198,6 +216,8 @@ module Decoder(
                 		operand2 = read_reg_data2;
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
                 	end           
                 	
                 	if(sa == 0 && func == `Nor)
@@ -214,6 +234,8 @@ module Decoder(
                 		operand2 = read_reg_data2;
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
                 	end                  	    	
                 	
                 	if(r_rs == 0 && func == `Sll)
@@ -230,6 +252,8 @@ module Decoder(
                 		operand2 = read_reg_data2;
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
                 	end  
                 	
                 	if(r_rs == 0 && func == `Srl)
@@ -246,6 +270,8 @@ module Decoder(
                 		operand2 = read_reg_data2;
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
                 	end  
                 	
                 	if(r_rs == 0 && func == `Sra)
@@ -262,6 +288,8 @@ module Decoder(
                 		operand2 = read_reg_data2;
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
                 	end  
                 	
                 	if(sa == 0 && func == `Sllv)
@@ -278,6 +306,8 @@ module Decoder(
                 		operand2 = read_reg_data2;
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
                 	end  
                 	
                 	if(sa == 0 && func == `Srlv)
@@ -294,6 +324,8 @@ module Decoder(
                 		operand2 = read_reg_data2;
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
                 	end  
                 	
                 	if(sa == 0 && func == `Srav)
@@ -310,6 +342,8 @@ module Decoder(
                 		operand2 = read_reg_data2;
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
                 	end
                 	
                 	if(sa == 0 && func == `Movn)
@@ -329,6 +363,8 @@ module Decoder(
                 		operand2 = read_reg_data2;
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
                 	end
                 	
                 	if(sa == 0 && func == `Movz)
@@ -348,8 +384,81 @@ module Decoder(
                 		operand2 = read_reg_data2;
                 		wb_ex = `ChipEnable;
                 		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
                 	end
                 	
+                	if(sa == 0 && func == `Mthi)
+                	begin
+                		read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = `Non5;
+                		write_reg_addr = `Non5;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipDisable;
+                		write_reg_ce = `ChipDisable;
+                		op_type = `Move;
+                		sub_op_type = `mthi;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipEnable;
+                		we_ol = `ChipDisable;
+                	end
+                	
+                	if(sa == 0 && func == `Mtlo)
+                	begin
+                		read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = `Non5;
+                		write_reg_addr = `Non5;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipDisable;
+                		write_reg_ce = `ChipDisable;
+                		op_type = `Move;
+                		sub_op_type = `mtlo;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipEnable;
+                	end
+                	
+                	if(sa == 0 && func == `Mfhi)
+                	begin
+                		read_reg_addr1 = `Non5;
+               	 		read_reg_addr2 = `Non5;
+                		write_reg_addr = r_rs;
+                		read_reg_ce1 = `ChipDisable;
+                		read_reg_ce2 = `ChipDisable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Move;
+                		sub_op_type = `mfhi;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
+                	end
+                	
+                	if(sa == 0 && func == `Mflo)
+                	begin
+                		read_reg_addr1 = `Non5;
+               	 		read_reg_addr2 = `Non5;
+                		write_reg_addr = r_rs;
+                		read_reg_ce1 = `ChipDisable;
+                		read_reg_ce2 = `ChipDisable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Move;
+                		sub_op_type = `mflo;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
+                	end
                 	
                 end
                 
@@ -367,6 +476,8 @@ module Decoder(
                 	operand2 = `Non32;
                 	wb_ex = 1'bz;
                 	wb_mem = 1'bz;
+                	we_hi = `ChipDisable;
+                	we_ol = `ChipDisable;
                 end  
             endcase
         end

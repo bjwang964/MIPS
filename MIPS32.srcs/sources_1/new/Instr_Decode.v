@@ -44,7 +44,10 @@ module Instr_Decode(
     //访存阶段写数据
     input i_wb_Mem,
     input `RegAddrWide Mem_waddr,
-    input `DataBus Mem_wdata  
+    input `DataBus Mem_wdata,
+    
+    output o_we_hi,
+    output o_we_lo
     );
     //Decoder与register公用信号
     wire read_reg_ce1;
@@ -63,13 +66,15 @@ module Instr_Decode(
     wire `RegBus t_write_reg_addr;
     wire RI_o_wb_ex;
     wire RI_o_wb_mem;
+    wire DDE_we_hi;
+    wire DDE_we_lo;
     
     Decoder Decoder0(i_reset,i_instr,
                      read_reg_data1, read_reg_data2,
                      read_reg_ce1, read_reg_ce2, t_write_reg_ce,
                      read_reg_addr1, read_reg_addr2, t_write_reg_addr,
                      t_op_type, t_sub_op_type, t_operand1, t_operand2,
-                     RI_o_wb_ex, RI_o_wb_mem);
+                     DDE_we_hi, DDE_we_lo, RI_o_wb_ex, RI_o_wb_mem);
     Regiters Regiters0(i_reset,
                        read_reg_ce1, read_reg_addr1, read_reg_data1,
                        read_reg_ce2, read_reg_addr2, read_reg_data2,
@@ -86,6 +91,8 @@ module Instr_Decode(
                  t_write_reg_addr,
                  RI_o_wb_ex,
                  RI_o_wb_mem,
+                 DDE_we_hi,
+                 DDE_we_lo,
                  
                  o_operand1,
                  o_operand2,
@@ -94,6 +101,8 @@ module Instr_Decode(
                  o_write_reg_ce,
                  o_write_reg_addr,
                  o_wb_ex,
-                 o_wb_mem
+                 o_wb_mem,
+                 o_we_hi,
+                 o_we_lo
                     );
 endmodule
