@@ -159,10 +159,12 @@ module EX(
 				case(sub_op_type)
 					`movz:
 					begin
+						write_ce = (operand2==0)?`ChipEnable:`ChipDisable;
 						re_mov = operand1;
 					end
 					`movn:
 					begin
+						write_ce = (operand2!=0)?`ChipEnable:`ChipDisable;
 						re_mov = operand1;
 					end
 					`mfhi:

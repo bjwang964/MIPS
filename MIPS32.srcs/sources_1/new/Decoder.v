@@ -348,15 +348,12 @@ module Decoder(
                 	
                 	if(sa == 0 && func == `Movn)
                 	begin
-                		read_reg_addr1 = r_rs;
-               	 		read_reg_addr2 = r_rt;
-                		write_reg_addr = r_rd;
-                		read_reg_ce1 = `ChipEnable;
-                		read_reg_ce2 = `ChipEnable;
-                		if(operand2 != 0)
-                			write_reg_ce = `ChipEnable;
-                		else
-                			write_reg_ce = `ChipDisable;
+                		read_reg_addr1 <= r_rs;
+               	 		read_reg_addr2 <= r_rt;
+                		write_reg_addr <= r_rd;
+                		read_reg_ce1 <= `ChipEnable;
+                		read_reg_ce2 <= `ChipEnable;
+                		write_reg_ce = 1'bz;
                 		op_type = `Move;
                 		sub_op_type = `movn;
                 		operand1 = read_reg_data1;
@@ -374,10 +371,7 @@ module Decoder(
                 		write_reg_addr = r_rd;
                 		read_reg_ce1 = `ChipEnable;
                 		read_reg_ce2 = `ChipEnable;
-                		if(operand2 == 0)
-                			write_reg_ce = `ChipEnable;
-                		else
-                			write_reg_ce = `ChipDisable;
+                		write_reg_ce = 1'bz;
                 		op_type = `Move;
                 		sub_op_type = `movz;
                 		operand1 = read_reg_data1;
@@ -428,7 +422,7 @@ module Decoder(
                 	begin
                 		read_reg_addr1 = `Non5;
                	 		read_reg_addr2 = `Non5;
-                		write_reg_addr = r_rs;
+                		write_reg_addr = r_rd;
                 		read_reg_ce1 = `ChipDisable;
                 		read_reg_ce2 = `ChipDisable;
                 		write_reg_ce = `ChipEnable;
@@ -446,7 +440,7 @@ module Decoder(
                 	begin
                 		read_reg_addr1 = `Non5;
                	 		read_reg_addr2 = `Non5;
-                		write_reg_addr = r_rs;
+                		write_reg_addr = r_rd;
                 		read_reg_ce1 = `ChipDisable;
                 		read_reg_ce2 = `ChipDisable;
                 		write_reg_ce = `ChipEnable;

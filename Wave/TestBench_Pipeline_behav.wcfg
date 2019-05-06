@@ -12,22 +12,29 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="755500001fs"></ZoomEndTime>
-      <Cursor1Time time="80500000fs"></Cursor1Time>
+      <ZoomEndTime time="179200001fs"></ZoomEndTime>
+      <Cursor1Time time="50000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="138"></ValueColumnWidth>
+      <ValueColumnWidth column_width="134"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="8" />
    <wave_markers>
       <marker time="10000000" label="" />
       <marker time="30000000" label="" />
       <marker time="50000000" label="" />
-      <marker time="70000000" label="" />
       <marker time="90000000" label="" />
-      <marker time="110000000" label="" />
       <marker time="130000000" label="" />
+      <marker time="170000000" label="" />
+      <marker time="190000000" label="" />
+      <marker time="210000000" label="" />
+      <marker time="230000000" label="" />
+      <marker time="250000000" label="" />
+      <marker time="270000000" label="" />
+      <marker time="70000000" label="" />
+      <marker time="110200000" label="" />
+      <marker time="150000000" label="" />
    </wave_markers>
    <wvobject fp_name="/TestBench_Pipeline/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
@@ -69,6 +76,14 @@
          <obj_property name="ElementShortName">o_write_reg_addr[4:0]</obj_property>
          <obj_property name="ObjectShortName">o_write_reg_addr[4:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Decode0/o_we_hi" type="logic">
+         <obj_property name="ElementShortName">o_we_hi</obj_property>
+         <obj_property name="ObjectShortName">o_we_hi</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Decode0/o_we_lo" type="logic">
+         <obj_property name="ElementShortName">o_we_lo</obj_property>
+         <obj_property name="ObjectShortName">o_we_lo</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="group81" type="group">
       <obj_property name="label">Execute</obj_property>
@@ -86,6 +101,22 @@
          <obj_property name="ElementShortName">o_write_data[31:0]</obj_property>
          <obj_property name="ObjectShortName">o_write_data[31:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Execute0/o_we_hi" type="logic">
+         <obj_property name="ElementShortName">o_we_hi</obj_property>
+         <obj_property name="ObjectShortName">o_we_hi</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Execute0/o_we_lo" type="logic">
+         <obj_property name="ElementShortName">o_we_lo</obj_property>
+         <obj_property name="ObjectShortName">o_we_lo</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Execute0/o_hi_data" type="array">
+         <obj_property name="ElementShortName">o_hi_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_hi_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Execute0/o_lo_data" type="array">
+         <obj_property name="ElementShortName">o_lo_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_lo_data[31:0]</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="group85" type="group">
       <obj_property name="label">Mem</obj_property>
@@ -102,6 +133,30 @@
       <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Mem0/o_write_reg_data" type="array">
          <obj_property name="ElementShortName">o_write_reg_data[31:0]</obj_property>
          <obj_property name="ObjectShortName">o_write_reg_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Mem0/o_hi_data" type="array">
+         <obj_property name="ElementShortName">o_hi_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_hi_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Mem0/o_lo_data" type="array">
+         <obj_property name="ElementShortName">o_lo_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_lo_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Mem0/o_E_hi_data" type="array">
+         <obj_property name="ElementShortName">o_E_hi_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_E_hi_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Mem0/o_E_lo_data" type="array">
+         <obj_property name="ElementShortName">o_E_lo_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_E_lo_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Mem0/o_E_we_hi" type="logic">
+         <obj_property name="ElementShortName">o_E_we_hi</obj_property>
+         <obj_property name="ObjectShortName">o_E_we_hi</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_Mem0/o_E_we_lo" type="logic">
+         <obj_property name="ElementShortName">o_E_we_lo</obj_property>
+         <obj_property name="ObjectShortName">o_E_we_lo</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group89" type="group">
@@ -123,11 +178,26 @@
          <obj_property name="ObjectShortName">o_write_reg_data[31:0]</obj_property>
          <obj_property name="Reversed">false</obj_property>
       </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_WB0/i_we_hi" type="logic">
+         <obj_property name="ElementShortName">i_we_hi</obj_property>
+         <obj_property name="ObjectShortName">i_we_hi</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_WB0/i_we_lo" type="logic">
+         <obj_property name="ElementShortName">i_we_lo</obj_property>
+         <obj_property name="ObjectShortName">i_we_lo</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_WB0/i_hi_data" type="array">
+         <obj_property name="ElementShortName">i_hi_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_hi_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/TestBench_Pipeline/Pipeline0/Instr_WB0/i_lo_data" type="array">
+         <obj_property name="ElementShortName">i_lo_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_lo_data[31:0]</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="group102" type="group">
       <obj_property name="label">Push</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="group92" type="group">
          <obj_property name="label">Push_Decode</obj_property>
          <obj_property name="DisplayName">label</obj_property>
