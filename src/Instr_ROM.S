@@ -3,6 +3,7 @@
 .set noat
 
 _start:
+    /*
     ori     $1, $0, 0x0001
     ori     $2, $1, 0x0010
     ori     $3, $1, 0x0100
@@ -23,3 +24,12 @@ _start:
     srav    $15, $4, $2
     srl     $16, $4, 2
     srlv    $17, $4, $2
+    */
+    ori     $1, $0, 0x0001
+    movz    $2, $1, $0
+    movn    $3, $0, $1
+
+    mthi    $2
+    mtlo    $3
+    mfhi    $4
+    mflo    $5
