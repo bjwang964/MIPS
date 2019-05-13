@@ -27,12 +27,14 @@
 #### *2019.4.26*
 > 增加了数据旁路，实现数据前推，解决一部分指令的RAW冲突。
 #### *2019.4.27*
-> 添加了`ANDI`, `XORI`, `AND`, `OR`, `XOR`, `NOR`, `LUI`, `SLL`, `SLLV`, `SRA`, `SRAV`, `SRL`, `SRLV`指令,但算术移位运算( `SRA`, `SRAV`)功能不完整。
+> 添加了`ANDI`, `XORI`, `AND`, `OR`, `XOR`, `NOR`, `LUI`, `SLL`, `SLLV`, `SRA`, `SRAV`, `SRL`, `SRLV`指令,但算术移位运算(`SRA`, `SRAV`)功能不完整。
 #### *2019.5.5*
 >* 增加了HI与LO两个特殊寄存器。
 >* 添加了六条移动操作指令`MOVN`, `MOVZ`, `MFHI`, `MFLO`, `MTHI`, `MTLO`（未测试）。
 #### *2019.5.6*
 >完成了移动操作指令的测试。
+#### *2019.5.13*
+>  添加了`ADDU`,`ADD`,`SUB`,`SUBU`,`SLT`,`SLTU`,`ADDI`,`ADDIU`,`SLTI`,`SLTIU`,`CLO`,`CLZ`,等算术运算指令(未测试)。
 ----
 ## **五级流水线时序图**
 #### 顶层时序

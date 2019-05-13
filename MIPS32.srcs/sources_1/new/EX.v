@@ -81,6 +81,7 @@ module EX(
     reg `DataBus re_log;
     reg `DataBus re_sft;
     reg `DataBus re_mov;
+    reg `DataBus re_ari;
     always @ *
     begin
     	case(op_type)
@@ -197,6 +198,114 @@ module EX(
 					begin
 						o_lo_data = operand1;
 					end
+				endcase
+			end
+			
+			`Arithmetic:
+			begin
+				case(sub_op_type)
+					`add:
+					begin
+						re_ari = operand1 + operand2;
+					end
+
+					`sub:
+					begin
+						re_ari = operand1 - operand2;
+					end
+
+					`slt:
+					begin
+						if(operand1 < operand2)
+						begin
+							re_ari = 1;
+						end
+						
+						else
+						begin
+							re_ari = 0;
+						end
+					end
+
+					`clz:
+					begin
+						re_ari = operand1[31] ? 0 : 
+								 operand1[30] ? 1 : 
+								 operand1[29] ? 2 :
+								 operand1[28] ? 3 : 
+								 operand1[27] ? 4 : 
+								 operand1[26] ? 5 :
+								 operand1[25] ? 6 : 
+								 operand1[24] ? 7 : 
+								 operand1[23] ? 8 : 
+								 operand1[22] ? 9 : 
+								 operand1[21] ? 10 : 
+								 operand1[20] ? 11 :
+								 operand1[19] ? 12 : 
+								 operand1[18] ? 13 : 
+								 operand1[17] ? 14 : 
+								 operand1[16] ? 15 : 
+								 operand1[15] ? 16 : 
+								 operand1[14] ? 17 : 
+								 operand1[13] ? 18 : 
+								 operand1[12] ? 19 : 
+								 operand1[11] ? 20 :
+								 operand1[10] ? 21 : 
+							     operand1[9] ? 22 : 
+						 		 operand1[8] ? 23 : 
+							 	 operand1[7] ? 24 : 
+								 operand1[6] ? 25 : 
+			 					 operand1[5] ? 26 : 
+				 				 operand1[4] ? 27 : 
+								 operand1[3] ? 28 : 
+								 operand1[2] ? 29 : 
+								 operand1[1] ? 30 : 
+								 operand1[0] ? 31 : 32 ;
+					end
+					`clo:
+					begin
+						re_ari = ~operand1[31] ? 0 : 
+							 	 ~operand1[30] ? 1 : 
+							 	 ~operand1[29] ? 2 :
+							 	 ~operand1[28] ? 3 : 
+							  	 ~operand1[27] ? 4 : 
+							 	 ~operand1[26] ? 5 :
+ 								 ~operand1[25] ? 6 : 
+							 	 ~operand1[24] ? 7 : 
+							 	 ~operand1[23] ? 8 : 
+							 	 ~operand1[22] ? 9 : 
+							 	 ~operand1[21] ? 10 : 
+							 	 ~operand1[20] ? 11 :
+							 	 ~operand1[19] ? 12 : 
+							 	 ~operand1[18] ? 13 : 
+							 	 ~operand1[17] ? 14 : 
+							 	 ~operand1[16] ? 15 : 
+							 	 ~operand1[15] ? 16 : 
+							 	 ~operand1[14] ? 17 : 
+							 	 ~operand1[13] ? 18 : 
+							 	 ~operand1[12] ? 19 : 
+							 	 ~operand1[11] ? 20 :
+							 	 ~operand1[10] ? 21 : 
+						     	 ~operand1[9] ? 22 : 
+					 		 	 ~operand1[8] ? 23 : 
+						 	 	 ~operand1[7] ? 24 : 
+							 	 ~operand1[6] ? 25 : 
+			 					 ~operand1[5] ? 26 : 
+				 				 ~operand1[4] ? 27 : 
+							 	 ~operand1[3] ? 28 : 
+							 	 ~operand1[2] ? 29 : 
+							 	 ~operand1[1] ? 30 : 
+							 	 ~operand1[0] ? 31 : 32 ;
+					end
+					`mul:
+					begin
+			
+					end
+					`mult:
+					begin
+	
+					end
+
 				endcase
 			end
 			

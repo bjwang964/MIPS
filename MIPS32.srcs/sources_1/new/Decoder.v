@@ -454,6 +454,273 @@ module Decoder(
                 		we_ol = `ChipDisable;
                 	end
                 	
+                	if(sa == 0 && func == `Add )
+                	begin
+                		read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Arithmetic;
+                		sub_op_type = `add;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
+                	end
+                	if(sa == 0 && func == `Addu )
+                	begin
+                		read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Arithmetic;
+                		sub_op_type = `add;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
+                	end
+                	if(sa == 0 && func == `Sub )
+                	begin
+                		read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Arithmetic;
+                		sub_op_type = `sub;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
+                	end
+                	if(sa == 0 && func == `Subu )
+                	begin
+                		read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Arithmetic;
+                		sub_op_type = `sub;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
+                	end
+                	if(sa == 0 && func == `Slt )
+                	begin
+                		read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Arithmetic;
+                		sub_op_type = `slt;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
+                	end
+                	if(sa == 0 && func == `Sltu )
+                	begin
+                		read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Arithmetic;
+                		sub_op_type = `slt;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
+                	end
+                end
+                
+                `Special2:
+                begin
+                	if(sa == 0 && func == `Clz)
+               		begin
+                    	read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Arithmetic;
+                		sub_op_type = `clz;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
+                	end
+                	
+                	if(sa == 0 && func == `Clo)
+               		begin
+                    	read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Arithmetic;
+                		sub_op_type = `clo;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
+                	end
+                	
+                	if(sa == 0 && func == `Mul)
+               		begin
+                    	read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = r_rd;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipEnable;
+                		op_type = `Arithmetic;
+                		sub_op_type = `mul;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipDisable;
+                		we_ol = `ChipDisable;
+                	end
+                	
+                	if(sa == 0 && func == `Mult)
+               		begin
+                    	read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = `Non5;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipDisable;
+                		op_type = `Arithmetic;
+                		sub_op_type = `mult;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipEnable;
+                		we_ol = `ChipEnable;
+                	end
+                	
+                	if(sa == 0 && func == `Multu)
+               		begin
+                    	read_reg_addr1 = r_rs;
+               	 		read_reg_addr2 = r_rt;
+                		write_reg_addr = `Non5;
+                		read_reg_ce1 = `ChipEnable;
+                		read_reg_ce2 = `ChipEnable;
+                		write_reg_ce = `ChipDisable;
+                		op_type = `Arithmetic;
+                		sub_op_type = `mult;
+                		operand1 = read_reg_data1;
+                		operand2 = read_reg_data2;
+                		wb_ex = `ChipEnable;
+                		wb_mem = `ChipEnable;
+                		we_hi = `ChipEnable;
+                		we_ol = `ChipEnable;
+                	end
+                end
+                
+                `Addi:
+                begin
+                	read_reg_addr1 = i_rs;
+               	 	read_reg_addr2 = `Non5;
+                	write_reg_addr = i_rd;
+                	read_reg_ce1 = `ChipEnable;
+                	read_reg_ce2 = `ChipDisable;
+                	write_reg_ce = `ChipEnable;
+                	op_type = `Arithmetic;
+                	sub_op_type = `add;
+                	operand1 = read_reg_data1;
+                	operand2 = {16'h0, imm};
+                	wb_ex = `ChipEnable;
+                	wb_mem = `ChipEnable;
+                	we_hi = `ChipDisable;
+                	we_ol = `ChipDisable;
+                end
+                
+                `Addiu:
+                begin
+                	read_reg_addr1 = i_rs;
+               	 	read_reg_addr2 = `Non5;
+                	write_reg_addr = i_rd;
+                	read_reg_ce1 = `ChipEnable;
+                	read_reg_ce2 = `ChipDisable;
+                	write_reg_ce = `ChipEnable;
+                	op_type = `Arithmetic;
+                	sub_op_type = `addu;
+                	operand1 = read_reg_data1;
+                	operand2 = {16'h0, imm};
+                	wb_ex = `ChipEnable;
+                	wb_mem = `ChipEnable;
+                	we_hi = `ChipDisable;
+                	we_ol = `ChipDisable;
+                end
+                
+                `Slti:
+                begin
+                	read_reg_addr1 = i_rs;
+               	 	read_reg_addr2 = `Non5;
+                	write_reg_addr = i_rd;
+                	read_reg_ce1 = `ChipEnable;
+                	read_reg_ce2 = `ChipDisable;
+                	write_reg_ce = `ChipEnable;
+                	op_type = `Arithmetic;
+                	sub_op_type = `slt;
+                	operand1 = read_reg_data1;
+                	operand2 = {16'h0, imm};
+                	wb_ex = `ChipEnable;
+                	wb_mem = `ChipEnable;
+                	we_hi = `ChipDisable;
+                	we_ol = `ChipDisable;
+                end
+                
+                `Sltiu:
+                begin
+                	read_reg_addr1 = i_rs;
+               	 	read_reg_addr2 = `Non5;
+                	write_reg_addr = i_rd;
+                	read_reg_ce1 = `ChipEnable;
+                	read_reg_ce2 = `ChipDisable;
+                	write_reg_ce = `ChipEnable;
+                	op_type = `Arithmetic;
+                	sub_op_type = `sltu;
+                	operand1 = read_reg_data1;
+                	operand2 = {16'h0, imm};
+                	wb_ex = `ChipEnable;
+                	wb_mem = `ChipEnable;
+                	we_hi = `ChipDisable;
+                	we_ol = `ChipDisable;
                 end
                 
                 default:
