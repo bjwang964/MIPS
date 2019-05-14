@@ -82,6 +82,15 @@ module EX(
     reg `DataBus re_sft;
     reg `DataBus re_mov;
     reg `DataBus re_ari;
+    
+    reg `DataBus o1_o2;
+    reg overflow;
+    
+    reg `DataBus m1;
+    reg `DataBus m2;
+    
+    reg `DataBus hi_temp;
+    reg `DataBus lo_temp;
     always @ *
     begin
     	case(op_type)
@@ -207,16 +216,25 @@ module EX(
 					`add:
 					begin
 						re_ari = operand1 + operand2;
+						if((operand1[31]==0 && operand2[31]==0 && re_ari[31]==1) || (operand1[31]==1 && operand2[31]==1 && re_ari[31]==0))
+							overflow = 1;
+						else
+							overflow = 0;
 					end
 
 					`sub:
 					begin
-						re_ari = operand1 - operand2;
+						re_ari = operand1 + (~operand2+1);
+						if((operand1[31]==0 && operand2[31]==1 && re_ari[31]==1) || (operand1[31]==1 && operand2[31]==0 && re_ari[31]==0))
+							overflow = 1;
+						else
+							overflow = 0;
 					end
 
 					`slt:
 					begin
-						if(operand1 < operand2)
+						o1_o2 = operand1 + (~operand2+1);
+						if(o1_o2[31] == 1)
 						begin
 							re_ari = 1;
 						end
@@ -299,11 +317,13 @@ module EX(
 					end
 					`mul:
 					begin
-			
+						m1 = (operand1[31]==0)?operand1:(~operand1+1);
+						m2 = (operand2[31]==0)?operand2:(~operand1+1);
 					end
 					`mult:
 					begin
-	
+						m1 = (operand1[31]==0)?operand1:(~operand1+1);
+						m2 = (operand2[31]==0)?operand2:(~operand1+1);
 					end
 
 				endcase
@@ -314,6 +334,7 @@ module EX(
                 re_sft = `Non32;
                 re_log = `Non32;
                 re_mov = `Non32;
+                re_ari = `Non32;
 			end
 		endcase
     end
@@ -334,6 +355,11 @@ module EX(
             `Move:
             begin
             	write_data = re_mov;
+            end
+            
+            `Arithmetic:
+            begin
+            	write_data = re_ari;
             end
             
             default:
