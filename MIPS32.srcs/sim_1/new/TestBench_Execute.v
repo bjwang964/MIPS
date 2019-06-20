@@ -36,7 +36,8 @@ module TestBench_Execute(
        wire o_write_ce;
        wire  `RegBus o_write_addr;
        wire  `DataBus o_write_data;
-       
+
+
        initial
        begin
            clk = 0;

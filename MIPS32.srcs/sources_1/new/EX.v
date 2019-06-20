@@ -91,6 +91,15 @@ module EX(
     
     reg `DataBus hi_temp;
     reg `DataBus lo_temp;
+    
+    wire `DataBus sum;
+    reg `DataBus add1;
+    reg `DataBus add2;
+    wire cout;
+    reg cin = 0;
+    ADD32 ADD32_0(add1, add2, cin, sum, cout);
+    
+    
     always @ *
     begin
     	case(op_type)
@@ -215,7 +224,9 @@ module EX(
 				case(sub_op_type)
 					`add:
 					begin
-						re_ari = operand1 + operand2;
+						add1 = operand1;
+						add2 = operand2;
+						re_ari = sum;
 						if((operand1[31]==0 && operand2[31]==0 && re_ari[31]==1) || (operand1[31]==1 && operand2[31]==1 && re_ari[31]==0))
 							overflow = 1;
 						else
@@ -224,7 +235,9 @@ module EX(
 
 					`sub:
 					begin
-						re_ari = operand1 + (~operand2+1);
+						add1 = operand1;
+						add2 = ~operand2+1;
+						re_ari = sum;
 						if((operand1[31]==0 && operand2[31]==1 && re_ari[31]==1) || (operand1[31]==1 && operand2[31]==0 && re_ari[31]==0))
 							overflow = 1;
 						else
@@ -233,15 +246,27 @@ module EX(
 
 					`slt:
 					begin
-						o1_o2 = operand1 + (~operand2+1);
-						if(o1_o2[31] == 1)
+						if(operand1[31]==0 && operand2[31]==1)
+						begin
+							re_ari = 0;
+						end
+						else if(operand1[31]==1 && operand2[31]==0)
 						begin
 							re_ari = 1;
 						end
-						
 						else
 						begin
-							re_ari = 0;
+							add1 = operand1;
+							add2 = ~operand2+1;
+							o1_o2 = sum;
+							if(o1_o2[31] == 1)
+							begin
+								re_ari = 1;
+							end
+							else
+							begin
+								re_ari = 0;
+							end
 						end
 					end
 

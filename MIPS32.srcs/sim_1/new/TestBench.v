@@ -22,80 +22,36 @@
 
 
 module TestBench( );
-	reg i_clk;
-	reg i_reset;
-	reg i_write_reg_ce;
-	reg `RegBus i_write_reg_addr;
-	reg `DataBus i_write_reg_data;
-	
-	
-	wire `InstrBus FD_Instr;
-	wire  `DataBus DE_operand1;
-	wire  `DataBus DE_operand2;
-	wire  [2:0] DE_op_type;
-	wire  [7:0] DE_sub_op_type;
-	wire DE_write_reg_ce;
-	wire `RegBus DE_write_reg_addr;
-	wire o_write_ce;
-	wire  `RegBus o_write_addr;
-	wire  `DataBus o_write_data;
 
+	reg [31:0] a;
+	reg [31:0] b;
+	reg cin;
+	wire [31:0] s;
+	wire cout;
     
     initial
     begin
-    	i_clk = 0;
-    	i_reset = `ResetDisable;
-    	i_write_reg_ce = 0;
-    	i_write_reg_addr = 0;
-    	i_write_reg_data = 0;
-    	
-    	#20
-    	i_clk = ~i_clk;
-    	#20
-    	i_clk = ~i_clk;
-    	#20
-    	i_clk = ~i_clk;
-    	#20
-    	i_clk = ~i_clk;
-    	#20
-    	i_clk = ~i_clk;
-    	#20
-    	i_clk = ~i_clk;
+		a = 24;
+		forever #5 a = a+5;
     end
     
-    Instr_Fetch Instr_Fetch1(
-     i_clk,
-     i_reset,
-     FD_Instr
-    );
-    Instr_Decode Instr_Decode1(
-     i_clk,
-     i_reset,
-      FD_Instr,
-     i_write_reg_ce,
-      i_write_reg_addr,
-      i_write_reg_data,
-	   DE_operand1,
-        DE_operand2,
-         DE_op_type,
-         DE_sub_op_type,
-       DE_write_reg_ce,
-        DE_write_reg_addr
-    );
+        initial
+    begin
+		b = 16;
+		forever #10 b = b + 7;
+    end
+        initial
+    begin
+		cin = 1;
+		forever #2 cin = ~cin;
+    end
     
-    	Instr_Execute Instr_Execute1(
-    	 i_clk,
-    	i_reset,
-    	DE_op_type,
-    	DE_sub_op_type,
-    	DE_operand1,
-    	DE_operand2,
-    	DE_write_reg_ce,
-    	DE_write_reg_addr,
-    	o_write_ce,
-    	o_write_addr,
-    	o_write_data
-    	);
+    ADD32 ADD(
+    	a, b, cin,
+    	s, cout
+    );
+
+    
     
 
    
